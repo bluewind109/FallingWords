@@ -3,6 +3,7 @@ using UnityEngine;
 public class WordDisplay : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI text;
+    [SerializeField] private float fallSpeed = 1f;
 
     public void SetWord(string word)
     {
@@ -19,5 +20,10 @@ public class WordDisplay : MonoBehaviour
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+
+    void Update()
+    {
+        transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f);
     }
 }
