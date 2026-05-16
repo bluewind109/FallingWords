@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e854d97d33e1e40b29beba45d568e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordManager
-  wordDisplayPrefab: {fileID: 215630797282781939, guid: a0bae862c4726ef4aa172138aa1e70a6, type: 3}
+  wordSpawner: {fileID: 1049163058}
 --- !u!114 &1049163057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a031d6503342cc043be76b5bd22e3e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordSpawner
+  wordPrefab: {fileID: 215630797282781939, guid: a0bae862c4726ef4aa172138aa1e70a6, type: 3}
+  wordCanvas: {fileID: 663999883}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
