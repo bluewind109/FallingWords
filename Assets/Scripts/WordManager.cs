@@ -3,14 +3,28 @@ using UnityEngine;
 
 public class WordManager : MonoBehaviour
 {
+    public static WordManager Instance;
+
     List<Word> words = new List<Word>();
 
     private bool hasActiveWord = false;
     private Word activeWord;
 
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    void OnDestroy()
+    {
+        Instance = null;
+    }
+
     void Start()
     {
         WordGenerator.LoadWords();
+        AddWord();
+        AddWord();
         AddWord();
     }
 
@@ -18,6 +32,7 @@ public class WordManager : MonoBehaviour
     {
         Word word = new Word(WordGenerator.GetRandomWord());
         words.Add(word);
+        Debug.Log("Added word: " + word.word);
     }
 
     public void TypeLetter(char letter)
@@ -57,7 +72,7 @@ public class Word
 {
     public string word;
     private int typeIndex;
-    
+
     public Word(string _word)
     {
         word = _word;
