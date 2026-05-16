@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 1049163056}
   - component: {fileID: 1049163057}
   - component: {fileID: 1049163058}
+  - component: {fileID: 1049163059}
   m_Layer: 0
   m_Name: WordManager
   m_TagString: Untagged
@@ -511,6 +512,18 @@ MonoBehaviour:
   wordPrefab: {fileID: 215630797282781939, guid: a0bae862c4726ef4aa172138aa1e70a6, type: 3}
   wordCanvas: {fileID: 663999883}
   spawnRange: {x: -200, y: 200}
+--- !u!114 &1049163059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049163054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b342a7849c8684478fc4560a65ddabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WordTimer
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

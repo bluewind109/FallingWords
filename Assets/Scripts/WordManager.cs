@@ -25,9 +25,6 @@ public class WordManager : MonoBehaviour
     void Start()
     {
         WordGenerator.LoadWords();
-        AddWord();
-        AddWord();
-        AddWord();
     }
 
     public void AddWord()
