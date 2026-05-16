@@ -34,7 +34,7 @@ public class WordManager : MonoBehaviour
     {
         Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
         words.Add(word);
-        Debug.Log("Added word: " + word.word);
+        // Debug.Log("Added word: " + word.word);
     }
 
     public void TypeLetter(char letter)
@@ -92,7 +92,7 @@ public class Word
     public void TypeLetter()
     {
         typeIndex++;
-        // Remove the letter on screen
+        wordDisplay.RemoveLetter();
     }
 
     public bool WordTyped()
@@ -100,7 +100,7 @@ public class Word
         bool wordTyped = typeIndex >= word.Length;
         if (wordTyped)
         {
-            // Remove the word on screen
+            wordDisplay.RemoveWord();
         }
         return wordTyped;
     }
