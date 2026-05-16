@@ -8,14 +8,12 @@ public class WordManager : MonoBehaviour
     void Start()
     {
         WordGenerator.LoadWords();
-        var word = WordGenerator.GetRandomWord();
-        Debug.Log(word);
-        AddWord(word);
+        AddWord();
     }
 
-    public void AddWord(string _word)
+    public void AddWord()
     {
-        Word word = new Word(_word);
+        Word word = new Word(WordGenerator.GetRandomWord());
         words.Add(word);
     }
 }
