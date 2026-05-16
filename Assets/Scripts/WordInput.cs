@@ -9,7 +9,7 @@ public class WordInput : MonoBehaviour
         foreach (char letter in Input.inputString)
         {
             WordManager.Instance.TypeLetter(letter);
-            Debug.Log("Typed letter: " + letter);
+            // Debug.Log("Typed letter: " + letter);
         }
     }
 }

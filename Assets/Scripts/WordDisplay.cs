@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WordDisplay : MonoBehaviour
 {
-    [SerializeField] private Text text;
+    [SerializeField] private TMPro.TextMeshProUGUI text;
 
     public void SetWord(string word)
     {
