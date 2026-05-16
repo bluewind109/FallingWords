@@ -5,6 +5,8 @@ public class WordManager : MonoBehaviour
 {
     public static WordManager Instance;
 
+    [SerializeField] private WordSpawner wordSpawner;
+
     List<Word> words = new List<Word>();
 
     private bool hasActiveWord = false;
@@ -30,7 +32,7 @@ public class WordManager : MonoBehaviour
 
     public void AddWord()
     {
-        Word word = new Word(WordGenerator.GetRandomWord());
+        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
         words.Add(word);
         Debug.Log("Added word: " + word.word);
     }
@@ -72,11 +74,14 @@ public class Word
 {
     public string word;
     private int typeIndex;
+    private WordDisplay wordDisplay;
 
-    public Word(string _word)
+    public Word(string _word, WordDisplay _wordDisplay)
     {
         word = _word;
         typeIndex = 0;
+        wordDisplay = _wordDisplay;
+        wordDisplay.SetWord(word);
     }
 
     public char GetNextLetter()
