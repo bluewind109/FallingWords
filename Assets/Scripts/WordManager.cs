@@ -6,6 +6,8 @@ public class WordManager : MonoBehaviour
     public static WordManager Instance;
 
     [SerializeField] private WordSpawner wordSpawner;
+    [SerializeField] private WordInput wordInput;
+    [SerializeField] private WordTimer wordTimer;
 
     List<Word> words = new List<Word>();
 
@@ -17,14 +19,18 @@ public class WordManager : MonoBehaviour
         Instance = this;
     }
 
-    void OnDestroy()
-    {
-        Instance = null;
-    }
-
     void Start()
     {
         WordGenerator.LoadWords();
+        wordInput.OnLetterTyped += TypeLetter;
+        wordTimer.OnWordTimeout += AddWord;
+    }
+
+    void OnDestroy()
+    {
+        Instance = null;
+        wordInput.OnLetterTyped -= TypeLetter;
+        wordTimer.OnWordTimeout -= AddWord;
     }
 
     public void AddWord()
@@ -34,7 +40,7 @@ public class WordManager : MonoBehaviour
         // Debug.Log("Added word: " + word.word);
     }
 
-    public void TypeLetter(char letter)
+    private void TypeLetter(char letter)
     {
         if (hasActiveWord)
         {

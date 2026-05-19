@@ -485,6 +485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordManager
   wordSpawner: {fileID: 1049163058}
+  wordInput: {fileID: 1049163057}
+  wordTimer: {fileID: 1049163059}
 --- !u!114 &1049163057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b342a7849c8684478fc4560a65ddabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordTimer
+  wordDelay: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

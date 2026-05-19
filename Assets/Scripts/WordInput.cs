@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class WordInput : MonoBehaviour
 {
+    public System.Action<char> OnLetterTyped;
+
     void Update()
     {
-        if (WordManager.Instance == null) return;
-
         foreach (char letter in Input.inputString)
         {
             if (!IsAllowedCharacter(letter)) continue;
-            WordManager.Instance.TypeLetter(letter);
+            OnLetterTyped?.Invoke(letter);
             Debug.Log("Typed letter: " + letter);
         }
     }

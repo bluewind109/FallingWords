@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class WordTimer : MonoBehaviour
 {
+    public System.Action OnWordTimeout;
+
     [SerializeField] private float wordDelay = 1.5f;
 
     private float nextWordTime = 0f;
@@ -10,7 +12,7 @@ public class WordTimer : MonoBehaviour
     {
         if (Time.time >= nextWordTime)
         {
-            WordManager.Instance.AddWord();
+            OnWordTimeout?.Invoke();
             nextWordTime = Time.time + wordDelay;
             wordDelay *= 0.99f; // Decrease delay for next word
         }
