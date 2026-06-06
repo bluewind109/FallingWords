@@ -23,14 +23,14 @@ public class WordManager : MonoBehaviour
     {
         WordGenerator.LoadWords();
         wordInput.OnLetterTyped += TypeLetter;
-        wordTimer.OnWordTimeout += AddWord;
+        wordTimer.onWordTimeout += AddWord;
     }
 
     void OnDestroy()
     {
         Instance = null;
         wordInput.OnLetterTyped -= TypeLetter;
-        wordTimer.OnWordTimeout -= AddWord;
+        wordTimer.onWordTimeout -= AddWord;
     }
 
     public void AddWord()
